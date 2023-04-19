@@ -1,0 +1,3042 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Zerion Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Zerion Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Apr 19, 2023 02:53:12 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Apr 19, 2023 02:53:12 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Apr 19, 2023 02:59:30 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>26</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>9</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='74%'>
+<b>26</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='25%'><b>9</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='11%'><b>25</b> events passed</small></div>
+<div>
+<small data-tooltip='8%'><b>18</b> events failed,
+<b data-tooltip='%'>179</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"ZERION TEST-CASES":0,"Integration_checkTileContents":0.962,"Integration_checkTileContents":0.691,"Integration_checkTileContents":11.071,"Integration_checkTileContents":0.681,"Integration_checkTileContents":0.668,"Integration_checkTileContents":0.669,"Integration_checkTileContents":0.685,"Integration_checkTileContents":11.272,"Integration_checkTileContents":0.659,"Integration_checkTileContents":0.978,"Integration_checkTileContents":0.95,"Integration_checkTileContents":11.047,"Integration_checkTileContents":1.202,"Integration_checkTileContents":11.115,"Integration_checkTileContents":11.18,"Integration_checkTileContents":11.079,"Integration_checkTileContents":11,"Integration_checkTileContents":0.738,"Integration_checkTileContents":11.264,"Integration_checkTileContents":0.664,"Integration_checkTileContents":0.888,"Integration_checkTileRedirections":11.344,"Integration_checkTileRedirections":13.144,"Integration_checkTileRedirections":11.729,"Integration_checkTileRedirections":6.005,"Integration_checkTileRedirections":10.405,"Integration_checkTileRedirections":5.885,"Integration_verifyRequestFormValidations":5.145,"Integration_verifyRequestFormValidations":4.709,"Integration_verifyRequestFormValidations":4.031,"Integration_verifyRequestFormValidations":4.042,"Integration_verifyRequestFormValidations":3.748,"Integration_verifyRequestFormValidations":4.25,"Integration_verifyRequestFormValidations":4.491
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>ProjectName</td>
+<td>Zerion</td>
+</tr>
+<tr>
+<td>Tester</td>
+<td>QA Team</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Win11</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>Chrome</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 26,
+failParent: 9,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 25,
+failEvents: 18,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 179
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ZERION TEST-CASES</p>
+            <p class="text-sm">
+              <span>2:53:13 pm</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ZERION TEST-CASES</h5>
+<span class='badge badge-success'>04.19.2023 2:53:13 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:53:13 pm</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:53:20 pm</span> / <span>00:00:00:962</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:53:20 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:53:21 pm</span>
+<span class='badge badge-default'>00:00:00:962</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:20 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:20 pm</td>
+        <td>
+          Test case : Veriffy 'Salesforce' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:21 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:21 pm</td>
+        <td>
+          verified tile description for 'Salesforce' as : Send data to your Salesforce CRM to create cases, tasks, new accounts and so much more.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:53:21 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:53:26 pm</span> / <span>00:00:00:691</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:53:26 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:53:27 pm</span>
+<span class='badge badge-default'>00:00:00:691</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:26 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:26 pm</td>
+        <td>
+          Test case : Veriffy 'ThermoWorks' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:27 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:27 pm</td>
+        <td>
+          verified tile description for 'ThermoWorks' as : Utilize ThermoWorks Temperature reading tools to automatically populate real-time temperatures into your form.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:53:27 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:53:32 pm</span> / <span>00:00:11:071</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:53:32 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:53:43 pm</span>
+<span class='badge badge-default'>00:00:11:071</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025342.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025342.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:32 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:32 pm</td>
+        <td>
+          Test case : Veriffy 'Zebra Printer' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:32 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:53:42 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:53:42 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Zebra Printer')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [68f906e6b362c476dc5bee81c094e842, findElement {using=xpath, value=//h3/strong[contains(text(),'Zebra Printer')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62847}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62847/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 68f906e6b362c476dc5bee81c094e842</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:53:48 pm</span> / <span>00:00:00:681</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:53:48 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:53:49 pm</span>
+<span class='badge badge-default'>00:00:00:681</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:48 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:48 pm</td>
+        <td>
+          Test case : Veriffy 'SQL Server' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:49 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:49 pm</td>
+        <td>
+          verified tile description for 'SQL Server' as : Use your existing SQL Server database to store data from iFormBuilder data tables. Create New Rows, Update existing data and much more with our SQL Server integration.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:53:49 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:53:55 pm</span> / <span>00:00:00:668</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:53:55 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:53:55 pm</span>
+<span class='badge badge-default'>00:00:00:668</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:55 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:55 pm</td>
+        <td>
+          Test case : Veriffy 'Dropbox' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:55 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:53:55 pm</td>
+        <td>
+          verified tile description for 'Dropbox' as : Store all of your collected media such as photos, drawings, signatures, and audio recordings from iFormBuilder directly into Dropbox.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:53:55 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:01 pm</span> / <span>00:00:00:669</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:01 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:54:02 pm</span>
+<span class='badge badge-default'>00:00:00:669</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:01 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:01 pm</td>
+        <td>
+          Test case : Veriffy 'Google Docs' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:02 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:02 pm</td>
+        <td>
+          verified tile description for 'Google Docs' as : Create a custom Google document using data from your iFormBuilder form. Store this document in Google Drive or email out to stakeholders.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:54:02 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:07 pm</span> / <span>00:00:00:685</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:07 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:54:08 pm</span>
+<span class='badge badge-default'>00:00:00:685</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:07 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:07 pm</td>
+        <td>
+          Test case : Veriffy 'Google Sheets' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:08 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:08 pm</td>
+        <td>
+          verified tile description for 'Google Sheets' as : Populate data directly into your existing Google spreadsheets to get real-time information fed from iFormBuilder.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:54:08 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:13 pm</span> / <span>00:00:11:272</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:13 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:54:24 pm</span>
+<span class='badge badge-default'>00:00:11:272</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025424.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025424.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:13 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:13 pm</td>
+        <td>
+          Test case : Veriffy 'Google Drive' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:14 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:54:24 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:54:24 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Google Drive')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8ed8843376a3294296192cfc22257a27, findElement {using=xpath, value=//h3/strong[contains(text(),'Google Drive')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62986}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62986/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8ed8843376a3294296192cfc22257a27</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:29 pm</span> / <span>00:00:00:659</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:29 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:54:30 pm</span>
+<span class='badge badge-default'>00:00:00:659</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:29 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:29 pm</td>
+        <td>
+          Test case : Veriffy 'Microsoft OneDrive' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:30 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:30 pm</td>
+        <td>
+          verified tile description for 'Microsoft OneDrive' as : Store all of your collected media such as photos, drawings, signatures, and audio recordings from iFormBuilder directly into OneDrive.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:54:30 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:36 pm</span> / <span>00:00:00:978</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:36 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:54:37 pm</span>
+<span class='badge badge-default'>00:00:00:978</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:36 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:36 pm</td>
+        <td>
+          Test case : Veriffy 'Microsoft SharePoint' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:37 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:37 pm</td>
+        <td>
+          verified tile description for 'Microsoft SharePoint' as : Store all of your collected media such as photos, drawings, signatures, and audio recordings from iFormBuilder directly into SharePoint.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:54:37 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:42 pm</span> / <span>00:00:00:950</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:42 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:54:43 pm</span>
+<span class='badge badge-default'>00:00:00:950</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:42 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:42 pm</td>
+        <td>
+          Test case : Veriffy 'ManateeWorks' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:43 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:43 pm</td>
+        <td>
+          verified tile description for 'ManateeWorks' as : Using your built-in camera on your iOS or Android device quickly and easily scan all types of barcodes, parse driver’s license information, and so much more!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:54:43 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:54:50 pm</span> / <span>00:00:11:047</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:54:50 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:55:01 pm</span>
+<span class='badge badge-default'>00:00:11:047</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025500.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025500.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:50 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:50 pm</td>
+        <td>
+          Test case : Veriffy 'Email' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:54:50 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:00 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:00 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Email')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6bc4421308769c424de56c162683b510, findElement {using=xpath, value=//h3/strong[contains(text(),'Email')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63096}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63096/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6bc4421308769c424de56c162683b510</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:55:06 pm</span> / <span>00:00:01:202</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:55:06 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:55:07 pm</span>
+<span class='badge badge-default'>00:00:01:202</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:06 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:06 pm</td>
+        <td>
+          Test case : Veriffy 'Slack' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:07 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:07 pm</td>
+        <td>
+          verified tile description for 'Slack' as : Integrate data with Slack to effectively communicate realtime information into Slack Channels.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:55:07 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:55:13 pm</span> / <span>00:00:11:115</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:55:13 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:55:24 pm</span>
+<span class='badge badge-default'>00:00:11:115</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025523.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025523.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:13 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:13 pm</td>
+        <td>
+          Test case : Veriffy 'Socket Scanner' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:13 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:23 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:23 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Socket Scanner')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [59ca17b50812267831ed7557c9147547, findElement {using=xpath, value=//h3/strong[contains(text(),'Socket Scanner')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63195}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63195/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 59ca17b50812267831ed7557c9147547</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:55:28 pm</span> / <span>00:00:11:180</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:55:28 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:55:39 pm</span>
+<span class='badge badge-default'>00:00:11:180</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025539.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025539.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:28 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:28 pm</td>
+        <td>
+          Test case : Veriffy 'Linea Pro' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:29 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:39 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:39 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Linea Pro')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7c39d9fe74fcc0d11aa2ab295a5980d2, findElement {using=xpath, value=//h3/strong[contains(text(),'Linea Pro')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63253}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63253/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7c39d9fe74fcc0d11aa2ab295a5980d2</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:55:45 pm</span> / <span>00:00:11:079</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:55:45 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:55:56 pm</span>
+<span class='badge badge-default'>00:00:11:079</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025556.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025556.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:45 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:45 pm</td>
+        <td>
+          Test case : Veriffy 'ArcGIS Online' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:55:46 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:56 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:55:56 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'ArcGIS Online')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c2d68884a363b4d8aa2d8baaafa4d893, findElement {using=xpath, value=//h3/strong[contains(text(),'ArcGIS Online')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63287}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63287/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c2d68884a363b4d8aa2d8baaafa4d893</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:56:02 pm</span> / <span>00:00:11:000</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:56:02 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:56:13 pm</span>
+<span class='badge badge-default'>00:00:11:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025612.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025612.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:02 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:02 pm</td>
+        <td>
+          Test case : Veriffy 'Webhooks' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:02 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:56:12 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:56:12 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Webhooks')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e2bea8c2899a4e6c8476a39a83864f9, findElement {using=xpath, value=//h3/strong[contains(text(),'Webhooks')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63317}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63317/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e2bea8c2899a4e6c8476a39a83864f9</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:56:18 pm</span> / <span>00:00:00:738</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:56:18 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:56:19 pm</span>
+<span class='badge badge-default'>00:00:00:738</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:18 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:18 pm</td>
+        <td>
+          Test case : Veriffy 'WebMerge' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:19 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:19 pm</td>
+        <td>
+          verified tile description for 'WebMerge' as : Populate a custom document with iFormBuilder data. Use Fillable PDFs, Word, Excel, Powerpoint or Build your own document.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:19 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:56:24 pm</span> / <span>00:00:11:264</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:56:24 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:56:35 pm</span>
+<span class='badge badge-default'>00:00:11:264</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025634.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileContents_20230419025634.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:24 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:24 pm</td>
+        <td>
+          Test case : Veriffy 'Box' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:24 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileContents</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:56:34 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Box')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [178fbb28a4cd7b809b37e1e206b6d1a9, findElement {using=xpath, value=//h3/strong[contains(text(),'Box')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63375}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63375/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 178fbb28a4cd7b809b37e1e206b6d1a9</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:56:40 pm</span> / <span>00:00:00:664</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:56:40 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:56:41 pm</span>
+<span class='badge badge-default'>00:00:00:664</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:40 pm</td>
+        <td>
+          Test case : Veriffy 'Zendesk' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:41 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:41 pm</td>
+        <td>
+          verified tile description for 'Zendesk' as : Create new tickets based on inspections and collected data.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:41 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileContents</p>
+            <p class="text-sm">
+              <span>2:56:47 pm</span> / <span>00:00:00:888</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileContents</h5>
+<span class='badge badge-success'>04.19.2023 2:56:47 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:56:47 pm</span>
+<span class='badge badge-default'>00:00:00:888</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:47 pm</td>
+        <td>
+          Check tile contents : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:47 pm</td>
+        <td>
+          Test case : Veriffy 'Zoho Reports' tile on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:47 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:47 pm</td>
+        <td>
+          verified tile description for 'Zoho Reports' as : Easily connect data and write directly to Zoho Reports Tables to update your live reporting views and dashboards.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:56:47 pm</td>
+        <td>
+          Integration_checkTileContents : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileRedirections</p>
+            <p class="text-sm">
+              <span>2:56:53 pm</span> / <span>00:00:11:344</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileRedirections</h5>
+<span class='badge badge-success'>04.19.2023 2:56:53 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:57:04 pm</span>
+<span class='badge badge-default'>00:00:11:344</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:53 pm</td>
+        <td>
+          Check tile redirections : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:53 pm</td>
+        <td>
+          Test case : Veriffy 'Salesforce' tile redirection on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:56:54 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:04 pm</td>
+        <td>
+          Current URL : https://www.zerionsoftware.com/integrations/salesforce
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:04 pm</td>
+        <td>
+          expectedUrl URL : https://www.zerionsoftware.com/integrations/salesforce
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:04 pm</td>
+        <td>
+          URL assertion success for : Salesforce
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:57:04 pm</td>
+        <td>
+          Integration_checkTileRedirections : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileRedirections</p>
+            <p class="text-sm">
+              <span>2:57:10 pm</span> / <span>00:00:13:144</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileRedirections</h5>
+<span class='badge badge-success'>04.19.2023 2:57:10 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:57:23 pm</span>
+<span class='badge badge-default'>00:00:13:144</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:10 pm</td>
+        <td>
+          Check tile redirections : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:10 pm</td>
+        <td>
+          Test case : Veriffy 'ThermoWorks' tile redirection on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:10 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:23 pm</td>
+        <td>
+          Current URL : https://www.zerionsoftware.com/integrations/thermoworks
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:23 pm</td>
+        <td>
+          expectedUrl URL : https://www.zerionsoftware.com/integrations/thermoworks
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:23 pm</td>
+        <td>
+          URL assertion success for : ThermoWorks
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:57:23 pm</td>
+        <td>
+          Integration_checkTileRedirections : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileRedirections</p>
+            <p class="text-sm">
+              <span>2:57:29 pm</span> / <span>00:00:11:729</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Integration_checkTileRedirections</h5>
+<span class='badge badge-success'>04.19.2023 2:57:29 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:57:41 pm</span>
+<span class='badge badge-default'>00:00:11:729</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileRedirections_20230419025740.png' src="C:\Users\abesh\eclipse-workspace\ze\ScreenShot\Integration_checkTileRedirections_20230419025740.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:29 pm</td>
+        <td>
+          Check tile redirections : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:29 pm</td>
+        <td>
+          Test case : Veriffy 'Zebra Printer' tile redirection on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:30 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:57:40 pm</td>
+        <td>
+          <span class='badge white-text red'>Failed Test case is : Integration_checkTileRedirections</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:57:40 pm</td>
+        <td>
+          <span class='badge white-text red'>Test Case Failed : org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h3/strong[contains(text(),'Zebra Printer')]"}
+  (Session info: chrome=112.0.5615.121)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'SJI-GOA-56', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ddbe65aa0db6e771d54dea15528a13a0, findElement {using=xpath, value=//h3/strong[contains(text(),'Zebra Printer')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.121, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\abesh\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63588}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63588/devtoo..., se:cdpVersion: 112.0.5615.121, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ddbe65aa0db6e771d54dea15528a13a0</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileRedirections</p>
+            <p class="text-sm">
+              <span>2:57:46 pm</span> / <span>00:00:06:005</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileRedirections</h5>
+<span class='badge badge-success'>04.19.2023 2:57:46 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:57:52 pm</span>
+<span class='badge badge-default'>00:00:06:005</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:46 pm</td>
+        <td>
+          Check tile redirections : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:46 pm</td>
+        <td>
+          Test case : Veriffy 'SQL Server' tile redirection on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:47 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:52 pm</td>
+        <td>
+          Current URL : https://www.zerionsoftware.com/integrations/sql-server
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:52 pm</td>
+        <td>
+          expectedUrl URL : https://www.zerionsoftware.com/integrations/sql-server
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:52 pm</td>
+        <td>
+          URL assertion success for : SQL Server
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:57:52 pm</td>
+        <td>
+          Integration_checkTileRedirections : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileRedirections</p>
+            <p class="text-sm">
+              <span>2:57:58 pm</span> / <span>00:00:10:405</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileRedirections</h5>
+<span class='badge badge-success'>04.19.2023 2:57:58 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:58:08 pm</span>
+<span class='badge badge-default'>00:00:10:405</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:58 pm</td>
+        <td>
+          Check tile redirections : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:58 pm</td>
+        <td>
+          Test case : Veriffy 'Zapier' tile redirection on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:57:58 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:08 pm</td>
+        <td>
+          Current URL : https://www.zerionsoftware.com/integrations/zapier-integration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:08 pm</td>
+        <td>
+          expectedUrl URL : https://www.zerionsoftware.com/integrations/zapier-integration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:08 pm</td>
+        <td>
+          URL assertion success for : Zapier
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:58:08 pm</td>
+        <td>
+          Integration_checkTileRedirections : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="28"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_checkTileRedirections</p>
+            <p class="text-sm">
+              <span>2:58:14 pm</span> / <span>00:00:05:885</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_checkTileRedirections</h5>
+<span class='badge badge-success'>04.19.2023 2:58:14 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:58:20 pm</span>
+<span class='badge badge-default'>00:00:05:885</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:14 pm</td>
+        <td>
+          Check tile redirections : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:14 pm</td>
+        <td>
+          Test case : Veriffy 'Dropbox' tile redirection on Integrations page.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:14 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:20 pm</td>
+        <td>
+          Current URL : https://www.zerionsoftware.com/integrations/dropbox-integration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:20 pm</td>
+        <td>
+          expectedUrl URL : https://www.zerionsoftware.com/integrations/dropbox-integration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:20 pm</td>
+        <td>
+          URL assertion success for : Dropbox
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:58:20 pm</td>
+        <td>
+          Integration_checkTileRedirections : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:58:25 pm</span> / <span>00:00:05:145</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:58:25 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:58:30 pm</span>
+<span class='badge badge-default'>00:00:05:145</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:25 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:25 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when email is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:25 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:28 pm</td>
+        <td>
+          Setting email as : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:28 pm</td>
+        <td>
+          Setting first name as : Test
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:28 pm</td>
+        <td>
+          Setting last name as : User
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:28 pm</td>
+        <td>
+          Setting company name as : sjinnovations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:29 pm</td>
+        <td>
+          Setting number as : 72205801
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:29 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : some text
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:30 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:58:30 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:58:36 pm</span> / <span>00:00:04:709</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:58:36 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:58:41 pm</span>
+<span class='badge badge-default'>00:00:04:709</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:36 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:36 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when first name is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:37 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:39 pm</td>
+        <td>
+          Setting email as : automate@mailinator.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:39 pm</td>
+        <td>
+          Setting first name as : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:40 pm</td>
+        <td>
+          Setting last name as : User
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:40 pm</td>
+        <td>
+          Setting company name as : sjinnovations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:40 pm</td>
+        <td>
+          Setting number as : 72205801
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:40 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : some text
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:41 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:58:41 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:58:46 pm</span> / <span>00:00:04:031</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:58:46 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:58:50 pm</span>
+<span class='badge badge-default'>00:00:04:031</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:46 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:46 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when last name is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:47 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:49 pm</td>
+        <td>
+          Setting email as : automate@mailinator.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:49 pm</td>
+        <td>
+          Setting first name as : Test
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:50 pm</td>
+        <td>
+          Setting last name as : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:50 pm</td>
+        <td>
+          Setting company name as : sjinnovations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:50 pm</td>
+        <td>
+          Setting number as : 72205801
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:50 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : some text
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:50 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:58:50 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:58:56 pm</span> / <span>00:00:04:042</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:58:56 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:59:00 pm</span>
+<span class='badge badge-default'>00:00:04:042</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:56 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:56 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when company name is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:56 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:59 pm</td>
+        <td>
+          Setting email as : automate@mailinator.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:59 pm</td>
+        <td>
+          Setting first name as : Test
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:59 pm</td>
+        <td>
+          Setting last name as : User
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:59 pm</td>
+        <td>
+          Setting company name as : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:59 pm</td>
+        <td>
+          Setting number as : 72205801
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:58:59 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : some text
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:00 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:00 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:59:06 pm</span> / <span>00:00:03:748</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:59:06 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:59:10 pm</span>
+<span class='badge badge-default'>00:00:03:748</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:06 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:06 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when phone number is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:06 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:09 pm</td>
+        <td>
+          Setting email as : automate@mailinator.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:09 pm</td>
+        <td>
+          Setting first name as : Test
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:09 pm</td>
+        <td>
+          Setting last name as : User
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:09 pm</td>
+        <td>
+          Setting company name as : sjinnovations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:09 pm</td>
+        <td>
+          Setting number as : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:09 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : some text
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:10 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:10 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:59:15 pm</span> / <span>00:00:04:250</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:59:15 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:59:20 pm</span>
+<span class='badge badge-default'>00:00:04:250</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:15 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:15 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when 'What new integration would you like' field is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:16 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:18 pm</td>
+        <td>
+          Setting email as : automate@mailinator.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:18 pm</td>
+        <td>
+          Setting first name as : Test
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:19 pm</td>
+        <td>
+          Setting last name as : User
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:19 pm</td>
+        <td>
+          Setting company name as : sjinnovations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:19 pm</td>
+        <td>
+          Setting number as : 72205801
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:19 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:20 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:20 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Integration_verifyRequestFormValidations</p>
+            <p class="text-sm">
+              <span>2:59:25 pm</span> / <span>00:00:04:491</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Integration_verifyRequestFormValidations</h5>
+<span class='badge badge-success'>04.19.2023 2:59:25 pm</span>
+<span class='badge badge-danger'>04.19.2023 2:59:30 pm</span>
+<span class='badge badge-default'>00:00:04:491</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:25 pm</td>
+        <td>
+          Check request form validations : Test is Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:25 pm</td>
+        <td>
+          Test case : Verify user cannot submit request when invalid email is empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:26 pm</td>
+        <td>
+          Navigated to : https://www.zerionsoftware.com/integrations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:28 pm</td>
+        <td>
+          Setting email as : hello
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:29 pm</td>
+        <td>
+          Setting first name as : Test
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:29 pm</td>
+        <td>
+          Setting last name as : User
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:29 pm</td>
+        <td>
+          Setting company name as : sjinnovations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:29 pm</td>
+        <td>
+          Setting number as : 72205801
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:29 pm</td>
+        <td>
+          Setting 'What new integration would you like' as : some text
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:59:30 pm</td>
+        <td>
+          Validation message verified to be : Please complete all required fields below (*)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:59:30 pm</td>
+        <td>
+          Integration_verifyRequestFormValidations : Test-case Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
